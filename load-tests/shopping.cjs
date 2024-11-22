@@ -1,6 +1,6 @@
 const { expect } = require("playwright/test");
 
-module.exports = { meat, fruit, deepFrozen, cake, pacifier };
+module.exports = { meat, milk, deepFrozen, cake, pacifier };
 function sleep(ms) {
   return new Promise(req => setTimeout(req, ms));
 }
@@ -11,13 +11,15 @@ async function meat(page) {
   await page.getByText("Högrev").click();
   expect(await page.getByRole('h2')).toBeVisible
 }
-async function fruit(page){
+async function milk(page){
   await page.goto("http://127.0.0.1:4000");
   await sleep(100);
-  await page.getByText("Frukt").click();
-  await page.getByText("Apelsin").click();
+  await page.getByText("Mejeri, ost & ägg ").click();
+  await page.getByText("Matlagning").click();
+  await sleep(100);
+  await page.getByText("Matgrädde Kokbar 13%").click();
   expect(await page.getByRole('h2')).toBeVisible
-}
+} 
 async function deepFrozen(page){
   await page.goto("http://127.0.0.1:4000");
   await sleep(100);
