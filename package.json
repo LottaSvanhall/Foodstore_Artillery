@@ -9,7 +9,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "artillery run load-tests/meatShoping.yml",
+    "test": "artillery run load-tests/shopping.yml",
     "newman-test": "newman run postman-collections/mataffaren.collection.json",
     "make-steps": "node makeSteps.cjs",
     "load-test-basic": "artillery run load-tests/basic.yml"
@@ -25,7 +25,9 @@
   },
   "devDependencies": {
     "@cucumber/cucumber": "^11.0.1",
+    "@playwright/test": "^1.49.0",
     "@qavajs/console-formatter": "^0.8.0",
+    "@types/node": "^22.9.1",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",

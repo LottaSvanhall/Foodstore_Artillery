@@ -1,17 +1,17 @@
 config:
   target: http://127.0.0.1:4000
   phases:
-    - duration: 10
-      arrivalRate: 1
-      rampTo: 5
+    - duration: 5
+      arrivalRate: 3
+      rampTo: 1
       name: Warm up phase
-    - duration: 10
+    - duration: 5
       arrivalRate: 5
-      rampTo: 10
+      rampTo: 1
       name: Ramp up load
     - duration: 10
-      arrivalRate: 10
-      rampTo: 30np
+      arrivalRate: 5
+      rampTo: 2
       name: Spike phase
   # Load & configure a couple of useful plugins
   # https://docs.art/reference/extensions
@@ -29,9 +29,20 @@ scenarios:
   - flow:
       - loop:
           - get:
-              url: "/kategori/frukt-och-gront"
+              url: "/kategori/frukt-och-gront/frukt/melon/"
+          - get:
+              url: "/kategori/mejeri-ost-och-agg/agg"
+          - get:
+              url: "/kategori/kott-chark-och-fagel/fagel"   
           - get:
               url: "/kategori/blommor-och-tradgard"
           - get:
-              url: "/kategori/apotek"
-        count: 100
+              url: "/produkt/100651251_ST/kategori/barn/valling-och-ersattning/valling-12-man"
+          - get:
+              url: "/produkt/101285120_ST/kategori/djur"
+          - get:
+              url: "/produkt/101277014_ST/kategori/vegetariskt"   
+          - get:
+              url: "/produkt/101259837_ST/kategori/skafferi"  
+                  
+        count: 5

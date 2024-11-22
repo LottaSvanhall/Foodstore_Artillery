@@ -36,6 +36,7 @@ jobs:
       # of npm install -> installs all npm modules
       # mentioned in package.json, preferably during CI
     - run: npm ci
+    - run: npm run build
       # start up the backend server
       # (the needs to run if we should be able 
       #  perform endpoint-testing)

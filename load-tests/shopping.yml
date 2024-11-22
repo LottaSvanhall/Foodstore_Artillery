@@ -1,0 +1,38 @@
+config:
+  target: http://127.0.0.1:4000
+  phases:
+    - duration: 2
+      arrivalRate: 1
+      rampTo: 1
+      name: Warm up phase
+    - duration: 2
+      arrivalRate: 1
+      rampTo: 1
+      name: Ramp up load
+    - duration: 2
+      arrivalRate: 1
+      rampTo: 1
+      name: Spike phase
+  engines:
+    playwright: 
+      launchOptions:
+        headless: true
+        aggregateByName: true
+  processor: "./shopping.cjs"
+scenarios:
+  - name: Meat Shopping
+    engine: playwright
+    testFunction: meat
+  - name: Fruit Shopping
+    engine: playwright
+    testFunction: fruit  
+  - name: Deep Frozen Shopping
+    engine: playwright
+    testFunction: deepFrozen
+  - name: Cake Shopping
+    engine: playwright
+    testFunction: cake
+  - name: Pacifier Shopping
+    engine: playwright
+    testFunction: pacifier
+      
