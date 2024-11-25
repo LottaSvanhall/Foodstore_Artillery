@@ -36,4 +36,12 @@ scenarios:
   - name: Pacifier Shopping
     engine: playwright
     testFunction: pacifier
-      
+  - name: Meat Shopping
+    engine: playwright
+    testFunction: meat
+  - name: Milk Shopping
+    engine: playwright
+    testFunction: milk  
+  - name: Deep Frozen Shopping
+    engine: playwright
+    testFunction: deepFrozen
