@@ -1,7 +1,7 @@
 config:
   target: http://127.0.0.1:4000
   phases:
-    #These phases are set low to not overload our computers. 
+    #These phases are set low to not overheat our computers. 
     - duration: 2
       arrivalRate: 1
       rampTo: 1

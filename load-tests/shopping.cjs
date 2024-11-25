@@ -7,8 +7,9 @@ function sleep(ms) {
 async function meat(page) {
   await page.goto("http://127.0.0.1:4000");
   await sleep(100);
-  await page.getByText("Kött").click();
-  await page.getByText("Högrev").click();
+  await page.getByText("kött, chark & fågel").click();
+  await page.getByText("korv").first().click();
+  await page.getByText("Falukorv Ring").click();
   expect(await page.getByRole('h2')).toBeVisible
 }
 async function milk(page){
