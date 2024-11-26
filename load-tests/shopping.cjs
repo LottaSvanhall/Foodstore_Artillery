@@ -9,6 +9,8 @@ async function meat(page) {
   await sleep(100);
   await page.getByText("kött, chark & fågel").click();
   await page.getByText("korv").first().click();
+  await page.getByText("falukorv").first().click();
+  await sleep(100);
   await page.getByText("Falukorv Ring").click();
   expect(await page.getByRole('h2')).toBeVisible
 }
