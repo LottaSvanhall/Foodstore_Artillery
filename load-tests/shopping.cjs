@@ -1,6 +1,6 @@
 const { expect } = require("playwright/test");
 
-module.exports = { meat, milk, deepFrozen, cake, pacifier };
+module.exports = { meat, milk, deepFrozen, cake, pacifier, lime , iceCream, cleaningWipes, beverage };
 function sleep(ms) {
   return new Promise(req => setTimeout(req, ms));
 }
@@ -46,5 +46,37 @@ async function pacifier(page){
   await page.getByText("barn").click();
   await page.getByText("nappar & nappflaskor").click();
   await page.getByText("Air Silikon Napp 6-16 Månader").click();
+  expect(await page.getByRole('h2')).toBeVisible
+}
+async function lime(page){
+  await page.goto("http://127.0.0.1:4000");
+  await sleep(100);
+  await page.getByText("Lime Klass 1").click()
+  expect(await page.getByRole('h2')).toBeVisible
+}
+async function iceCream(page){
+  await page.goto("http://127.0.0.1:4000");
+  await sleep(100);
+  await page.getByText("Glass, godis & snacks")
+  await page.getByText("Strawberry Cheescake Glass").click()
+  expect(await page.getByRole('h2')).toBeVisible
+}
+
+async function cleaningWipes(page){
+  await page.goto("http://127.0.0.1:4000");
+  await sleep(100);
+  await page.getByText("hem & städ")
+  await page.getByText("disk & städ")
+  await page.getByText("kök, badrum & fönsterrengöring")
+  await page.getByText("Kök Städservetter").click()
+  expect(await page.getByRole('h2')).toBeVisible
+}
+
+async function beverage(page){
+  await page.goto("http://127.0.0.1:4000");
+  await sleep(100);
+  await page.getByText("dryck")
+  await page.getByText("läsk")
+  await page.getByText("Julmust Läsk Pet").click()
   expect(await page.getByRole('h2')).toBeVisible
 }
