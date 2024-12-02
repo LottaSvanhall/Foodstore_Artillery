@@ -10,7 +10,6 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "artillery run load-tests/shopping.yml",
-    "newman-test": "newman run postman-collections/mataffaren.collection.json",
     "make-steps": "node makeSteps.cjs",
     "load-test-basic": "artillery run load-tests/basic.yml"
   },
