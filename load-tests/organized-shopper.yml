@@ -1,0 +1,41 @@
+config:
+  target: http://127.0.0.1:4000
+  phases:
+    #These phases are set low to not overheat our computers. 
+    - duration: 2
+      arrivalRate: 1
+      rampTo: 1
+      name: Warm up phase
+    - duration: 5
+      arrivalRate: 3
+      rampTo: 1
+      name: Ramp up load
+    - duration: 5
+      arrivalRate: 5
+      rampTo: 1
+      name: Spike phase
+  engines:
+    playwright: 
+      launchOptions:
+        headless: true
+        aggregateByName: true
+  processor: "./organized-shopper.cjs"
+scenarios:
+  - name: greens for tzatziki
+    engine: playwright
+    testFunction: greensForTzatziki
+  - name: minced meat
+    engine: playwright
+    testFunction: mincedMeatForGroundBeef
+  - name: yogurt for tzatziki
+    engine: playwright
+    testFunction: greekYogurtForTzatziki
+  - name: pantry for tzatziki
+    engine: playwright
+    testFunction: pantryForTzatziki
+  - name: bulgur
+    engine: playwright
+    testFunction: bulgur
+  - name: beer
+    engine: playwright
+    testFunction: beer 

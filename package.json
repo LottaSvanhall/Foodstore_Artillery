@@ -10,6 +10,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "artillery run load-tests/shopping.yml",
+    "test-organized": "artillery run load-tests/organized-shopper.yml",
+    "test-compare1": "artillery run load-tests/easy-compare-1.yml",
+    "test-compare2": "artillery run load-tests/easy-compare-2.yml",
     "make-steps": "node makeSteps.cjs",
     "load-test-basic": "artillery run load-tests/basic.yml"
   },

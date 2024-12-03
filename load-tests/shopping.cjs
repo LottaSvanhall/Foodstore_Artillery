@@ -57,26 +57,24 @@ async function lime(page){
 async function iceCream(page){
   await page.goto("http://127.0.0.1:4000");
   await sleep(100);
-  await page.getByText("Glass, godis & snacks")
+  await page.getByText("Glass, godis & snacks").click()
   await page.getByText("Strawberry Cheescake Glass").click()
   expect(await page.getByRole('h2')).toBeVisible
 }
-
 async function cleaningWipes(page){
   await page.goto("http://127.0.0.1:4000");
   await sleep(100);
-  await page.getByText("hem & städ")
-  await page.getByText("disk & städ")
-  await page.getByText("kök, badrum & fönsterrengöring")
+  await page.getByText("hem & städ").click()
+  await page.getByText("disk & städ").click()
+  await page.getByText("kök, badrum- & fönsterrengöring").click()
   await page.getByText("Kök Städservetter").click()
   expect(await page.getByRole('h2')).toBeVisible
 }
-
 async function beverage(page){
   await page.goto("http://127.0.0.1:4000");
   await sleep(100);
-  await page.getByText("dryck")
-  await page.getByText("läsk")
-  await page.getByText("Julmust Läsk Pet").click()
+  await page.getByText("dryck").click()
+  await page.getByText("läsk").click()
+  await page.getByText("Julmust Läsk Pet").first().click()
   expect(await page.getByRole('h2')).toBeVisible
 }
