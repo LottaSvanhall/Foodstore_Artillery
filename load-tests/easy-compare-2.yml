@@ -1,0 +1,29 @@
+config:
+  target: http://127.0.0.1:4000
+  phases:
+    #These phases are set low to not overheat our computers. 
+    - duration: 2
+      arrivalRate: 1
+      rampTo: 1
+      name: Warm up phase
+    - duration: 5
+      arrivalRate: 3
+      rampTo: 1
+      name: Ramp up load
+    - duration: 5
+      arrivalRate: 5
+      rampTo: 1
+      name: Spike phase
+  engines:
+    playwright: 
+      launchOptions:
+        headless: true
+        aggregateByName: true
+  processor: "./easy-compare-2.cjs"
+scenarios:
+  - name: pharmacy
+    engine: playwright
+    testFunction: pharmacy
+  - name: soil
+    engine: playwright
+    testFunction: soil

@@ -1,7 +1,7 @@
 config:
   target: http://127.0.0.1:4000
   phases:
-    #These phases are set low to not overload our computers. 
+    #These phases are set low to not overheat our computers. 
     - duration: 2
       arrivalRate: 1
       rampTo: 1
@@ -39,9 +39,15 @@ scenarios:
   - name: Meat Shopping
     engine: playwright
     testFunction: meat
-  - name: Milk Shopping
+  - name: Lime Shopping
     engine: playwright
-    testFunction: milk  
-  - name: Deep Frozen Shopping
+    testFunction: lime
+  - name: icecream Shopping
     engine: playwright
-    testFunction: deepFrozen
+    testFunction: iceCream
+  - name: cleaningWipes Shopping
+    engine: playwright
+    testFunction: cleaningWipes
+  - name: beverage Shopping
+    engine: playwright
+    testFunction: beverage
